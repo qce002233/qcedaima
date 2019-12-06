@@ -16,7 +16,7 @@
         };
         var d1 = document.getElementById("key").value;
 //        var d2 = document.getElementById("value").value;
-        xmlhttp.send("key=" + d1);
+        xmlhttp.send("key=" + d1);uuu
     }
 
     function searchData() {
@@ -45,17 +45,17 @@
     }
 </script>
 <p id="result"></p>
-<label>Ìá½»Êı¾İ</label>
+<label>æäº¤æ•°æ®</label>
 <input type="text" id="key">
 <!--<input type="text" id="value">-->
-<button onclick="submitData();">Ìá½»</button>
+<button onclick="submitData();">æäº¤</button>
 <br/>
-<label>²éÕÒ½á¹û</label>
+<label>æŸ¥æ‰¾ç»“æœ</label>
 <input type="text" id="searchkey">
-<button onclick="searchData();">ËÑË÷</button>
+<button onclick="searchData();">æœç´¢</button>
 <br/>
-<label>²ğ·Ö¹Ø¼ü×Ö</label>
+<label>æ‹†åˆ†å…³é”®å­—</label>
 <input type="text" id="submitstring">
-<button onclick="seperateString();">²ğ·Ö×Ö·û´®</button>
+<button onclick="seperateString();">æ‹†åˆ†å­—ç¬¦ä¸²</button>
 </body>
 </html></html>
