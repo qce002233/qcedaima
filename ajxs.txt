@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function submitData(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","http://127.0.0.1:8080/submit",true);
+        xmlhttp.onreadystatechange=function () {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                document.getElementById("result").innerText = xmlhttp.responseText;
+            }
+        };
+        var d1 = document.getElementById("key").value;
+//        var d2 = document.getElementById("value").value;
+        xmlhttp.send("key=" + d1);
+    }
+
+    function searchData() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","http://127.0.0.1:8080/search",true);
+        xmlhttp.onreadystatechange = function () {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                document.getElementById("result").innerText=xmlhttp.responseText;
+            }
+        };
+
+        var d1 = document.getElementById("searchkey").value;
+        xmlhttp.send("key=" + d1);
+    }
+
+    function seperateString() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","http://127.0.0.1:8080/seperate",true);
+        xmlhttp.onreadystatechange = function () {
+            if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                document.getElementById("result").innerText=xmlhttp.responseText;
+            }
+        };
+        var d1 = document.getElementById("submitstring").value;
+        xmlhttp.send("str=" + d1);
+    }
+</script>
+<p id="result"></p>
+<label>提交数据</label>
+<input type="text" id="key">
+<!--<input type="text" id="value">-->
+<button onclick="submitData();">提交</button>
+<br/>
+<label>查找结果</label>
+<input type="text" id="searchkey">
+<button onclick="searchData();">搜索</button>
+<br/>
+<label>拆分关键字</label>
+<input type="text" id="submitstring">
+<button onclick="seperateString();">拆分字符串</button>
+</body>
+</html></html>
